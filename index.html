@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi‑Channel Notification</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="header">
+        <h1>Send Notification</h1>
+        <p>Compose a message and choose delivery channels</p>
+    </header>
+    <main class="card">
+        <section class="push-section">
+            <button id="subscribeBtn" class="btn-primary">Enable Push Notifications</button>
+        </section>
+        <form id="notifyForm">
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="3" required placeholder="Enter notification text"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Channels</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="channels" value="push" /> Push</label>
+                    <label><input type="checkbox" name="channels" value="sms" /> SMS</label>
+                    <label><input type="checkbox" name="channels" value="email" /> Email</label>
+                    <label><input type="checkbox" name="channels" value="all" /> All</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phones">Phone Numbers (comma‑separated, for SMS)</label>
+                <textarea id="phones" name="phones" rows="2" placeholder="+1234567890, +1987654321"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="emails">Email Addresses (comma‑separated, for Email)</label>
+                <textarea id="emails" name="emails" rows="2" placeholder="user1@example.com, user2@example.com"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Notification</button>
+        </form>
+        <div id="status" class="status"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

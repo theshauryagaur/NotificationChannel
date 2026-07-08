@@ -1,0 +1,120 @@
+{
+	"info": {
+		"name": "NotificationChannel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send Notification to All Channels",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"New update available!\",\n    \"channels\": \"all\",\n    \"targetUsers\": [\n        {\n            \"phoneNumber\": \"+919876543210\",\n            \"email\": \"user1@example.com\"\n        },\n        {\n            \"phoneNumber\": \"+919876543210\",\n            \"email\": \"user2@example.com\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Notification via Push Notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"Notification-New update available!\",\n    \"channels\": \"push\",\n    \"targetUsers\": [{}\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Notification via SMS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"New update available!\",\n    \"channels\": \"sms\",\n    \"targetUsers\": [\n        {\n            \"phoneNumber\": \"+919876543210\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Notification via Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"New update available!\",\n    \"channels\": \"email\",\n    \"targetUsers\": [\n        {\n            \"email\": \"user1@example.com\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
